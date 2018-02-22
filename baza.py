@@ -13,6 +13,16 @@ def ustvari_tabele():
     povezava.close()
 
 
+def napolni_tabele():
+    """ Ustvari nekaj uporabnikov in nekaj iger. """
+    from random import randint
+    import uuid
+    for i in range(10):
+        vstavi_novega_uporabnika(i, f"Uporabnik {i}")
+        for j in range(10):
+            vstavi_novo_igro(i, randint(20, 100), str(uuid.uuid4()))
+
+
 def dobi_najboljse():
     """ Najdi 10 iger z najmanj napakami. """
     povezava = sqlite3.connect(IME_BAZE)
@@ -40,3 +50,8 @@ def vstavi_novo_igro(user_id, napake, beseda):
         "INSERT INTO Scores VALUES (?, ?, ?)", (user_id, napake, beseda))
     povezava.commit()
     povezava.close()
+
+
+if __name__ == "__main__":
+    ustvari_tabele()
+    napolni_tabele()
