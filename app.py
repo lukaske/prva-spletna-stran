@@ -42,7 +42,7 @@ def ugibaj(znak):
 def vislice():
     session['beseda'] = "endlessness"
     with open('nove_besede.txt') as besede:
-        for i in range(randint(1, 350747)):
+        for i in range(randint(1, 5408)):
             session['beseda'] = besede.readline().strip()
     session['slika'] = 0
     session['ugibal'] = ''
