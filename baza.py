@@ -58,7 +58,7 @@ def napolni_tabele():
     from random import randint
     import uuid
     for i in range(10):
-        user_id = vstavi_novega_uporabnika(f"Uporabnik {i}")
+        user_id = vstavi_novega_uporabnika("Uporabnik " + str(i))
         for j in range(10):
             vstavi_novo_igro(user_id, randint(30, 100), str(uuid.uuid4()))
 
