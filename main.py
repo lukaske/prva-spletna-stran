@@ -87,7 +87,7 @@ def ugibaj(znak):
 @app.route("/vislice")
 def vislice():
     session['beseda'] = "endlessness"
-    with open('besede.txt') as besede:
+    with open('besede.txt', encoding="UTF-8") as besede:
         for i in range(randint(1, 350747)):
             session['beseda'] = besede.readline().strip()
     session['slika'] = 0

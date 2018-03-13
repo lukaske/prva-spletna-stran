@@ -98,7 +98,7 @@ sudo apt-get install python3-virtualenv
 
 Naredite si virtualno okolje z imenom `venv` in vanj vstopite
 ```
-virtualenv -p $(which python3) venv
+virtualenv venv
 source venv/bin/activate
 ```
 *Opozorilo*: Mapo `venv` dodajte v `.gitignore`, da je po nesreči ne commitate
